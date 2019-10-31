@@ -33,7 +33,7 @@ class App extends React.Component{
                             this.props.questions.map ? this.props.questions.slice(0,devideArray).map((question)=>{
                                 return (
                                     <div key={question.id}>
-                                        <lable>{question.name}</lable>
+                                        <lable>{question.description}</lable>
                                         <input type="text" className="form-control" id="inputStyling"/>
                                     </div>
                                     
@@ -47,7 +47,7 @@ class App extends React.Component{
                             this.props.questions.map? this.props.questions.slice(devideArray).map((question)=>{
                                 return (
                                     <div key={question.id}>
-                                        <lable>{question.name}</lable>
+                                        <lable>{question.description}</lable>
                                         <input type="text" className="form-control" id="inputStyling"/>
                                     </div>
                                 )

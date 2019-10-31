@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const getQuestions = () => async dispatch =>{
     //console.log('ACTION IS WORKING')
-    const response = await axios.get('https://code-catalist-phone-book-rails.herokuapp.com/contacts')
+    const response = await axios.get('/api/')
     console.log(response)
     dispatch({
         type: FETCH_QUESTIONS,
