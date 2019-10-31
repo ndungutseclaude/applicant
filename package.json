@@ -6,7 +6,6 @@
     "node":"12.7.0",
     "npm":"6.10.0"
   },
-  "proxy": "https://codecatalyst-rwanda.herokuapp.com",
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.11.0",
