@@ -16,7 +16,7 @@ class App extends React.Component{
         this.props.getQuestions();
     }
     render(){
-    const {questions} = this.props;
+    // const {questions} = this.props;
     const devideArray = this.props.questions.length/2;
     //console.log(this.props.questions.length/2)
     console.log(devideArray)
@@ -24,7 +24,9 @@ class App extends React.Component{
     
         return (
             <div>
-            <div className="container"><Header/></div>
+            <div className="container">
+                <Header/>
+            </div>
             <div className="container" style={{ paddingRight:'10rem', paddingLeft:'5rem'}}>
             
                 <div className="row">
@@ -33,7 +35,7 @@ class App extends React.Component{
                             this.props.questions.map ? this.props.questions.slice(0,devideArray).map((question)=>{
                                 return (
                                     <div key={question.id}>
-                                        <lable>{question.description}</lable>
+                                        <p>{question.description}</p>
                                         <input type="text" className="form-control" id="inputStyling"/>
                                     </div>
                                     
@@ -47,7 +49,7 @@ class App extends React.Component{
                             this.props.questions.map? this.props.questions.slice(devideArray).map((question)=>{
                                 return (
                                     <div key={question.id}>
-                                        <lable>{question.description}</lable>
+                                        <p>{question.description}</p>
                                         <input type="text" className="form-control" id="inputStyling"/>
                                     </div>
                                 )

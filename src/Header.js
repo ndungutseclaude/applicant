@@ -4,7 +4,7 @@ const Header =()=>{
     return(
         <div>
             <div>
-                <img src="code_catalyst.svg" alt="image not available"/>
+                <img src="code_catalyst.svg" alt="not available"/>
                 <p style={{float:'right'}}>LOGOUT</p>
             </div>
             
