@@ -39,18 +39,18 @@ class Login extends React.Component{
                 <h1> Login Form</h1>
                 <form onSubmit={this.formSubmit} className="ui form" style={{marginRight: '30rem', marginLeft: '8rem'}}>
                     <label> Email:</label>
-                    <input type="email"
+                    <input type="email" required
                         name="email"
                         value={this.state.email}
                         onChange={this.handleChange}
                     />
                     <label> Password: </label>
-                    <input type="text"
+                    <input type="password"  required
                         name="password"
                         value={this.state.password}
                         onChange={this.handleChange}
                     />
-                    <button type="submit">SIGN UP</button>
+                    <button type="submit" className="ui button" style={{margin:'2rem'}}>SIGN UP</button>
                 </form>
                 
             </div>
