@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Provider } from 'react-redux';
 
-import store from './store/store';
+
+
 import App from './App';
+//import QuestionsList from './QuestionsList';
 
-ReactDom.render(<Provider store={store}><App/></Provider>, document.querySelector('#root'))
+ReactDom.render(<App/>, document.querySelector('#root'))

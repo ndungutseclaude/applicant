@@ -1,91 +1,27 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import {getQuestions} from './action/questionAction';
-import './App.css';
-import Header from './Header';
-import Footer from './Footer';
+import store from './store/store';
+import QuestionsList from './QuestionsList';
+import SignUp from './SignUp';
+import Login from './Login';
+import Test from './test';
 
-
-
-
-
-class App extends React.Component{
-    componentDidMount(){
-        this.props.getQuestions();
-    }
-    render(){
-    // const {questions} = this.props;
-    const devideArray = this.props.questions.length/2;
-    //console.log(this.props.questions.length/2)
-    console.log(devideArray)
-
-    
-        return (
-            <div>
-            <div className="container">
-                <Header/>
-            </div>
-            <div className="container" style={{ paddingRight:'10rem', paddingLeft:'5rem'}}>
-            
-                <div className="row">
-                    <div className="col">
-                        {
-                            this.props.questions.map ? this.props.questions.slice(0,devideArray).map((question)=>{
-                                return (
-                                    <div key={question.id}>
-                                        <p>{question.description}</p>
-                                        <input type="text" className="form-control" id="inputStyling"/>
-                                    </div>
-                                    
-                                )
-                            })
-                            :null
-                        }
-                    </div>
-                    <div className="col">
-                        {
-                            this.props.questions.map? this.props.questions.slice(devideArray).map((question)=>{
-                                return (
-                                    <div key={question.id}>
-                                        <p>{question.description}</p>
-                                        <input type="text" className="form-control" id="inputStyling"/>
-                                    </div>
-                                )
-                            })
-                            :null
-                        }
-                    </div>
-
+const App =()=>{
+    return (
+        <Provider store={store}>
+            <BrowserRouter>
+            <Switch>
+                <div>
+                    <Route exact path="/" component={SignUp} />
+                    <Route exact path="/Login" component={Login}/>
+                    <Route exact path="/QuestionsList" component={QuestionsList}/>
+                    <Route exact path="/Test" component={Test}/>
                 </div>
-                
-                <div className="row">
-                    <div className="buttonsStyling">
-                    <button className="btn" id="laterbtn">
-                            save to continiou later
-                        </button>
-                        <button className="btn btn-danger" id="nextbtn">
-                            NEXT
-                        </button>
-                    </div>
-
-                </div>
-                
-            </div>
-            <Footer/>
-            </div>
-        )
-    }
+            </Switch>
+        </BrowserRouter>
+        </Provider>
+    )
 }
-
-App.propTypes={
-    questions: PropTypes.array.isRequired,
-    getQuestions: PropTypes.func.isRequired
-}
-const mapStateToProps =(state)=>{
-    return {
-        questions: state.question
-    }
-}
-export default  connect(mapStateToProps,{getQuestions}) (App);
+export default App;
