@@ -5,7 +5,7 @@ const Header =()=>{
         <div>
             <div>
                 <img src="code_catalyst.svg" alt="not available"/>
-                <p style={{float:'right'}}>LOGOUT</p>
+                {/* <p style={{float:'right'}}>LOGOUT</p> */}
             </div>
             
         </div>
