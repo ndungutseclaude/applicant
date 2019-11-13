@@ -24,7 +24,7 @@ class SignUp extends React.Component{
     //FORM SUBMITION
     formSubmit=(e)=>{
         e.preventDefault();
-        const response = axios.post('https://codecatalyst-test.herokuapp.com/api/register',this.state)
+        axios.post('https://codecatalyst-test.herokuapp.com/api/register',this.state)
         .then((res)=>{
             //console.log(res.data.message)
             this.props.history.push('/')
