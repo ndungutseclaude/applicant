@@ -1,0 +1,105 @@
+.icon{
+    position: relative;
+    color:#f9a825;
+    width:30%;
+    margin-top:4%;
+    left:6%;
+   
+   }
+   .title{
+    position: relative;
+    font-weight: bold;
+    left: 22%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }  
+ .title1{
+    position: relative;
+    font-weight: bold;
+    left: 38%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+ .words{
+     position: relative;
+     margin-top:-3%;
+     left:4%;
+ }
+ .btn-danger{
+     margin-top:8%;
+    font-size:70%;
+    border-radius:0px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+ }
+ .exit{
+    position: relative;
+    border-bottom: 3px solid  #7E50D3;;
+    width:40%;
+   
+ }
+ .card-footer p{
+    position: relative;
+    color:white;
+    text-align: center;
+ }
+ .eye{
+    position: relative;
+    margin-left:-7%;
+    top:67%;
+ }
+ .signing{
+     position: relative;
+     right:18%;
+     margin-top:50px;
+ }
+ .content2{
+    position: relative;
+    right:2%;
+ }
+ .contents{
+     left:20%;
+     margin-top:4%;
+ }
+ .details{
+     position: relative;
+     width: 50%;
+     left:44%;
+     margin-top:5%;
+     
+ }
+ 
+ ::placeholder{
+    color:#4A4D51; 
+ }
+ .btn-post{
+     position: relative;
+    left:54%;
+ }
+ .or{
+     padding:2%;
+     width:20%;
+     text-align: center;
+ }
+ 
+
+@media only screen and (max-width: 600px)  {
+    .icon{
+        position: relative;
+        width: 100px;
+    }
+    .titles{
+        position:relative;
+        width:900%;
+        left:92%;
+        margin-top:-90px;
+       
+    }
+    .title{
+        width: 200%;
+    }
+    .contents{
+     background: brown;
+     width:900%;
+    }
+
+}

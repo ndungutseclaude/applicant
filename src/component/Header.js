@@ -3,10 +3,10 @@ import React from 'react';
 const Header =()=>{
     return(
         <div>
-            <div>
+            <nav>
                 <img src="code_catalyst.svg" alt="not available"/>
                 {/* <p style={{float:'right'}}>LOGOUT</p> */}
-            </div>
+            </nav>
             
         </div>
     )
