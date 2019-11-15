@@ -11,7 +11,7 @@ class QuestionsList extends React.Component{
         super(props);
         this.state={
             questionslist:[],
-            description:''
+            answer:''
              
             }
     }
@@ -24,7 +24,6 @@ class QuestionsList extends React.Component{
             console.log('no token found');
             this.props.history.push('/')
         }
-        //https://codecatalyst-test.herokuapp.com/ 
         
         axios.get('https://codecatalyst-test.herokuapp.com/api/',
         {headers: {Authorization: `Token ${jwt}`}})
@@ -32,12 +31,15 @@ class QuestionsList extends React.Component{
             this.setState({questionslist: res.data})
             //console.log(this.state.questionslist)
             //console.log(res.data.length);
+            
         })
         .catch(err =>{
             localStorage.removeItem("user-token")
             this.props.history.push('/')
         })
     }
+
+
 //FUNCTION TO LOGOUT
     logoutFunctin=(e)=>{
         localStorage.removeItem('user-token')
@@ -49,12 +51,49 @@ handleInputChange=(e)=>{
     this.setState({
         [e.target.name]: e.target.value
     })
-    console.log(this.state.description)
+    //console.log(this.state.answer)
 }
+
+//ANSWER SUBMITION
+answerSubmition=(e)=>{
+    e.preventDefault()
+    const jwt = getJwt();
+
+    //console.log(this.myVariable)
+    axios.post(`https://codecatalyst-test.herokuapp.com/api/${this.myVariable}`,
+    {description: this.state.answer},
+    {headers: {Authorization: `Token ${jwt}`}}
+    )
+    .then(res=>{
+        console.log(res)
+        this.props.history.push('/QuestionsList')
+        this.setState({answer:''})
+    })
+    .catch(err =>{
+        console.log(err)
+    })
+    //console.log(jwt)
+}
+
+
     render(){
-    const devideArray = this.state.questionslist.length/2;
-    //console.log(devideArray)
+        
+    console.log(this.state.questionslist)
+    const q=this.state.questionslist;
+// ASSIGNING QUESTIONS INTO A NEW ARRAY CALLED qArray
+    let qArray = []
+    q.forEach((question)=> qArray.push(question.description));
+
+// ASSINGING QUESTIONS IDs INTO A NEW ARRAY CALLED idArray
+    let idArray = []
+    q.forEach((question)=>idArray.push(question.id));
+    
+//VARIABLE TO PASS ID ON THE POST REQUEST
+    this.myVariable = idArray[0]
+    console.log(idArray.length)
+    let qID = 0
     if(this.state.questionslist){
+        
         return (
             <div>
                         {/* DIV WHICH HOLD HEADER */}
@@ -69,8 +108,26 @@ handleInputChange=(e)=>{
                                 
                                 
                             </div>
-                        {/* DIV WHICH HOLDS THE QUESTIONS AND ANSWERS */}
-                            <div className="container" style={{ paddingRight:'10rem', paddingLeft:'5rem'}}>
+{/* TESTING POST OF QUESTION */}
+                            <div>
+                                <h1> we have {qArray.length} questions</h1>
+                                <form onSubmit={this.answerSubmition} className="ui form">
+                                    <label>{qArray[qID]}</label> 
+                                    <input type="text" required 
+                                        name='answer' 
+                                        value={this.state.answer} 
+                                        onChange={this.handleInputChange} 
+                                    /> 
+                                    <button className="btn ">SUBMIT ANSWER</button>
+                                </form>
+                            
+                            
+                                        
+                                
+                            </div>
+
+                        {/* DIV WHICH HOLDS THE QUESTIONS AND ANSWERS  */}
+                             {/* <div className="container" style={{ paddingRight:'10rem', paddingLeft:'5rem'}}>
                                 
                                 <div className="row">
                                     <div className="col">
@@ -125,7 +182,8 @@ handleInputChange=(e)=>{
                 
                                 </div> 
                                 
-                            </div>
+                            </div> */}
+                        
                         {/* FOOTER     */}
                             <Footer/>
             </div>
