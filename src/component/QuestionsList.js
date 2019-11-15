@@ -110,7 +110,7 @@ answerSubmition=(e)=>{
                             </div>
 {/* TESTING POST OF QUESTION */}
                             <div>
-                                <h1> we have {qArray.length} questions</h1>
+                                <h1> You have {qArray.length} questions to Answer</h1>
                                 <form onSubmit={this.answerSubmition} className="ui form">
                                     <label>{qArray[qID]}</label> 
                                     <input type="text" required 
