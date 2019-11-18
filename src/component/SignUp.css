@@ -1,28 +1,36 @@
-.icon{
+.icons{
     position: relative;
-    color:#f9a825;
-    width:30%;
-    margin-top:4%;
-    left:6%;
-   
+    color:#FAAE0A; 
+} 
+
+   .clonings{
+       background: #4A4D51;
    }
-   .title{
+    .title{
     position: relative;
+    float: left;
+   font-size:40px;
+    width: 870px;
     font-weight: bold;
-    left: 22%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- }  
- .title1{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+}   
+.tops{
     position: relative;
-    font-weight: bold;
-    left: 38%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- }
- .words{
+    top:3rem;
+    left:8px;
+}
+.cont{
+    position: relative;
+    top:3rem;
+    right:18rem;   
+   
+}
+  .content3{
      position: relative;
-     margin-top:-3%;
-     left:4%;
- }
+     top:-1rem;
+     left:1rem;
+ }  
  .btn-danger{
      margin-top:8%;
     font-size:70%;
@@ -34,72 +42,133 @@
  .exit{
     position: relative;
     border-bottom: 3px solid  #7E50D3;;
-    width:40%;
+    width:100%;
    
  }
- .card-footer p{
-    position: relative;
-    color:white;
-    text-align: center;
- }
+
  .eye{
-    position: relative;
+    position: static;
     margin-left:-7%;
-    top:67%;
+    margin-top:3%;
+   
  }
  .signing{
      position: relative;
      right:18%;
-     margin-top:50px;
+     margin-top:40px;
  }
- .content2{
+  .title1{
     position: relative;
-    right:2%;
- }
- .contents{
-     left:20%;
-     margin-top:4%;
- }
+    float: left;
+    left:1rem;
+   font-size:40px;
+    width: 870px;
+    top:-1rem;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ } 
+ 
  .details{
      position: relative;
-     width: 50%;
-     left:44%;
-     margin-top:5%;
+     width:50%;
+     left:14rem;
+     top:6rem;
+     border-radius:0px;
      
  }
- 
  ::placeholder{
     color:#4A4D51; 
  }
- .btn-post{
+  .btn-post{
      position: relative;
-    left:54%;
- }
- .or{
+     top:20rem;
+     right:6rem;
+ } 
+  .or{
+      position: relative;
+      left:3rem;
      padding:2%;
      width:20%;
      text-align: center;
- }
+ } 
+ .divStyling{
+     position: relative;
+     top:16rem;
+  
+}
  
+ @media only screen and (max-width: 1190px){
 
-@media only screen and (max-width: 600px)  {
-    .icon{
+.titles{
+    top:0rem;
+    
+}
+.cont{
+    position: relative;
+    left:-21%;
+}
+.details{
+    position: relative;
+    left:19%;  
+}
+.btn-post{
+    left:-17%;
+}
+.exit{
+    left:-17%;
+}
+ }
+ @media only screen and (max-width: 770px){
+.details{
+    width: 80%;
+}
+.btn-post{
+    top:10rem;
+    left:7rem;
+}
+.exit{
+    left:0rem;
+    font-size: 80%;
+}
+.divStyling{
+    top:9rem;
+}
+ }
+ @media only screen and (max-width: 576px){
+     .cont{
         position: relative;
-        width: 100px;
+        left:5rem;
+        top:7rem;
+    }
+    .details{
+        left:2rem;
+        top:0rem;
+        width: 100%;
     }
     .titles{
-        position:relative;
-        width:900%;
-        left:92%;
-        margin-top:-90px;
-       
+        
+        width: 80%;
+        top:-2rem;
+        left:3rem;
+    }
+    .btn-post{
+       top:4rem;
+       left:3rem;  
     }
     .title{
-        width: 200%;
+        top:-4rem;
     }
-    .contents{
-     background: brown;
-     width:900%;
-    }
-
+    .title1{
+        top:-4rem;
+        left:9rem;
+ }
+ .divStyling{
+    top:2rem;
 }
+.or{
+    top:-3rem;
+   }
+   .exit{
+       top:-3rem;
+   }
+ }
