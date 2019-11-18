@@ -37,3 +37,11 @@ box-sizing: border-box;
     font-family: poppins;
      padding: 7px;
 }
+/* LOGIN STYLING */
+
+.btn-show-hide-pwd{
+    opacity: 0.5;
+}
+.btn-show-hide-pwd:hover{
+    opacity: 1;
+}

@@ -10,7 +10,8 @@ class Login extends React.Component{
         super(props);
         this.state={
             email:'',
-            password:''
+            password:'',
+            isPasswordShown:false
         }
     }
 
@@ -19,6 +20,12 @@ class Login extends React.Component{
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
+
+    //TOGGLE PASSWORD VISIBILITY
+    togglePasswordVisibility=()=>{
+        const { isPasswordShown } = this.state;
+        this.setState({ isPasswordShown: !isPasswordShown})
     }
 
     //FORM SUBMITION
@@ -36,7 +43,7 @@ class Login extends React.Component{
         
     };
     render(){
-        
+        const { isPasswordShown } = this.state;
         return(
             <div>
                 <Header/>
@@ -50,11 +57,14 @@ class Login extends React.Component{
                         onChange={this.handleChange}
                     />
                     <label> Password: </label>
-                    <input type="password"  required
+                    <div className="ui field">
+                    <input type= {(isPasswordShown)? "text": "password"} required
                         name="password"
                         value={this.state.password}
                         onChange={this.handleChange}
                     />
+                    <i className={(isPasswordShown)? "eye slash icon":"eye icon"} onClick={this.togglePasswordVisibility}></i>
+                    </div>
                     <button type="submit" className="ui button" style={{margin:'2rem'}}>Login</button>
                     <Link to="/SignUp">
                         Don't have an accoutn?

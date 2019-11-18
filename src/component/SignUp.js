@@ -9,7 +9,8 @@ class SignUp extends React.Component{
         this.state={
             username:'',
             email:'',
-            password:''
+            password:'',
+            isPasswordShown: false
         }
     }
 
@@ -20,11 +21,17 @@ class SignUp extends React.Component{
         })
         //console.log(this.state)   
     }
+    //TOGGLE PASSWORD VISIBILITY
+    togglePasswordVisibility=()=>{
+        const { isPasswordShown } = this.state
+        this.setState({ isPasswordShown: !isPasswordShown})
+    }
 
     //FORM SUBMITION
     formSubmit=(e)=>{
         e.preventDefault();
-        axios.post('https://codecatalyst-test.herokuapp.com/api/register',this.state)
+        axios.post('https://codecatalyst-test.herokuapp.com/api/register',{username: this.state.username, 
+        email: this.state.email, password:this.state.password})
         .then((res)=>{
             //console.log(res.data.message)
             this.props.history.push('/')
@@ -36,7 +43,7 @@ class SignUp extends React.Component{
         //console.log(response)  
     }
     render(){
-        
+        const { isPasswordShown } = this.state
         return(
             <div>
                 <Header/>
@@ -56,11 +63,18 @@ class SignUp extends React.Component{
                         onChange={this.handleChange}
                     />
                     <label> password:</label>
-                    <input type="password" required
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                    />
+                    <div>
+                        <div>
+                            <input type={(isPasswordShown)? "text":"password"} required
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                            <i className={(isPasswordShown)? "eye slash icon":"eye icon"} onClick={this.togglePasswordVisibility}></i>
+                        </div>
+                    </div>
                     
                     <button type="submit" className="ui button" style={{margin:'2rem'}}>SIGN UP</button>
                 </form>
