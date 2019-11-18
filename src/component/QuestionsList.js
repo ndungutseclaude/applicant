@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 import './App.css';
 import Footer from './Footer';
@@ -13,8 +14,11 @@ class QuestionsList extends React.Component{
             questionslist:[],
             answer:''
              
-            }
+        }
+        this.goToProject = this.goToProject.bind(this)
     }
+
+    
 
     componentDidMount(){ 
         const jwt = getJwt()
@@ -24,6 +28,10 @@ class QuestionsList extends React.Component{
             console.log('no token found');
             this.props.history.push('/')
         }
+        // else if(this.questionsLength === 0){
+        //     console.log('you have answered your question go with the project')
+        //     this.props.history.push('/project')
+        // }
         
         axios.get('https://codecatalyst-test.herokuapp.com/api/',
         {headers: {Authorization: `Token ${jwt}`}})
@@ -58,39 +66,52 @@ handleInputChange=(e)=>{
 answerSubmition=(e)=>{
     e.preventDefault()
     const jwt = getJwt();
+    if(!jwt){
+        console.log('you are not logged in')
+        this.props.history.push('/')
+    }
 
-    //console.log(this.myVariable)
+    //console.log(this.questionsLength)
     axios.post(`https://codecatalyst-test.herokuapp.com/api/${this.myVariable}`,
     {description: this.state.answer},
     {headers: {Authorization: `Token ${jwt}`}}
     )
     .then(res=>{
-        console.log(res)
-        this.props.history.push('/QuestionsList')
+        //console.log(res)
+        window.location.reload(false)
         this.setState({answer:''})
     })
     .catch(err =>{
         console.log(err)
     })
     //console.log(jwt)
+    
 }
 
+//FUNCTION WHICH ROUTE TO THE PROJECT PAGE
+goToProject(e){
+    e.preventDefault()
+    if(this.questionsLength === 0){
+        this.props.history.push('/project')
+    }
+    console.log('answer all question')
+    window.location.reload(false)
+}
 
     render(){
         
-    console.log(this.state.questionslist)
-    const q=this.state.questionslist;
+        const q=this.state.questionslist;
 // ASSIGNING QUESTIONS INTO A NEW ARRAY CALLED qArray
     let qArray = []
     q.forEach((question)=> qArray.push(question.description));
-
+    this.questionsLength = qArray.length
 // ASSINGING QUESTIONS IDs INTO A NEW ARRAY CALLED idArray
     let idArray = []
     q.forEach((question)=>idArray.push(question.id));
     
 //VARIABLE TO PASS ID ON THE POST REQUEST
     this.myVariable = idArray[0]
-    console.log(idArray.length)
+    //console.log(idArray.length)
     let qID = 0
     if(this.state.questionslist){
         
@@ -119,6 +140,9 @@ answerSubmition=(e)=>{
                                         onChange={this.handleInputChange} 
                                     /> 
                                     <button className="btn ">SUBMIT ANSWER</button>
+                                    <button className="ui green button" style={{marginTop: '2rem'}}
+                                        onClick={this.goToProject}
+                                    >NEXT</button>
                                 </form>
                             
                             
