@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import './SignUp.css'
 
 
 class Login extends React.Component{
@@ -63,7 +64,7 @@ class Login extends React.Component{
                         value={this.state.password}
                         onChange={this.handleChange}
                     />
-                    <i className={(isPasswordShown)? "eye slash icon":"eye icon"} onClick={this.togglePasswordVisibility}></i>
+                    <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility}></i>
                     </div>
                     <button type="submit" className="ui button" style={{margin:'2rem'}}>Login</button>
                     <Link to="/SignUp">

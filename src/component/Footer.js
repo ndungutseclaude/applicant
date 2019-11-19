@@ -1,5 +1,7 @@
 import React from 'react';
-import './SignUp.css';
+//import './SignUp.css';
+import './App.css';
+
 const Footer =()=>{
     return (
         <div className="divStyling">

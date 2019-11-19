@@ -47,9 +47,10 @@ class SignUp extends React.Component {
         render() {
             const { isPasswordShown } = this.state
             return (
-                <div className="container">
-                    <Header />
-                    <div>
+                <div>
+                    
+                    <div className="container">
+                        <Header />
                         <div className=" tops row">
                             <div className=" icons col-sm-3">
                                 <div><i className="fab fa-facebook-f"></i></div>
@@ -99,7 +100,7 @@ class SignUp extends React.Component {
                                         value={this.state.password}
                                         onChange={this.handleChange}
                                     />
-                                    <i className={(isPasswordShown)? "eye slash icon":"eye icon"} onClick={this.togglePasswordVisibility}></i>
+                                    <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"}  onClick={this.togglePasswordVisibility}></i>
                                 </div>
                                 <div className="btn-post">
                                     <button type="submit" className="btn btn-danger">START MY APPLICATION</button>
