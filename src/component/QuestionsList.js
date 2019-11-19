@@ -128,7 +128,6 @@ goToProject(e){
                                             className="btn">
                                             LOGOUT
                                     </button>
-                                </div>
                             </div>
 
                             <div className=" icon col-sm-3">
@@ -215,61 +214,61 @@ goToProject(e){
                         </div>
                     </div>
                     {/* DIV WHICH HOLDS THE QUESTIONS AND ANSWERS */}
-                    <div className="container" >
-                        <div className="qustions row">
-                            <div className="col">
-                                {
-                                    this.state.questionslist.map ? this.state.questionslist.slice(0, devideArray).map((question) => {
-                                        return (
-                                            <div key={question.id}>
-                                                <p>{question.description}</p>
+//                     <div className="container" >
+//                         <div className="qustions row">
+//                             <div className="col">
+//                                 {
+//                                     this.state.questionslist.map ? this.state.questionslist.slice(0, devideArray).map((question) => {
+//                                         return (
+//                                             <div key={question.id}>
+//                                                 <p>{question.description}</p>
 
-                                                <input type="text" className="form-control" id="inputStyling"
-                                                    name="description"
-                                                    value={this.state.description}
-                                                    onChange={this.handleInputChange}
-                                                />
-                                            </div>
+//                                                 <input type="text" className="form-control" id="inputStyling"
+//                                                     name="description"
+//                                                     value={this.state.description}
+//                                                     onChange={this.handleInputChange}
+//                                                 />
+//                                             </div>
 
-                                        )
-                                    })
-                                        : null
-                                }
-                            </div>
-                            <div className="col">
-                                {
-                                    this.state.questionslist.map ? this.state.questionslist.slice(devideArray).map((question) => {
-                                        return (
-                                            <div key={question.id}>
-                                                <p>{question.description}</p>
+//                                         )
+//                                     })
+//                                         : null
+//                                 }
+//                             </div>
+//                             <div className="col">
+//                                 {
+//                                     this.state.questionslist.map ? this.state.questionslist.slice(devideArray).map((question) => {
+//                                         return (
+//                                             <div key={question.id}>
+//                                                 <p>{question.description}</p>
 
-                                                <input type="text" className="form-control" id="inputStyling"
-                                                    name="description"
-                                                    value={this.state.description}
-                                                    onChange={this.handleInputChange}
-                                                />
-                                            </div>
-                                        )
-                                    })
-                                        : null
-                                }
-                            </div>
+//                                                 <input type="text" className="form-control" id="inputStyling"
+//                                                     name="description"
+//                                                     value={this.state.description}
+//                                                     onChange={this.handleInputChange}
+//                                                 />
+//                                             </div>
+//                                         )
+//                                     })
+//                                         : null
+//                                 }
+//                             </div>
 
-                        </div>
+//                         </div>
 
-                        <div className="row">
-                            <div className="buttonsStyling">
-                                <button className="btn1" id="laterbtn">
-                                    save to continiou later
-                                        </button>
-                                <button className="btn btn-danger" id="nextbtn">
-                                    NEXT
-                                        </button>
-                                    </div>
+//                         <div className="row">
+//                             <div className="buttonsStyling">
+//                                 <button className="btn1" id="laterbtn">
+//                                     save to continiou later
+//                                         </button>
+//                                 <button className="btn btn-danger" id="nextbtn">
+//                                     NEXT
+//                                         </button>
+//                                     </div>
                 
-                                </div> 
+//                                 </div> 
                                 
-                            </div> */}
+//                             </div> */}
                         
                         {/* FOOTER     */}
                             <Footer/>
