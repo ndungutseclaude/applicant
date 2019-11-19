@@ -131,7 +131,6 @@ goToProject(e){
                                 </div>
                             </div>
 
-                        <div className=" tops row">
                             <div className=" icon col-sm-3">
                                 <div><i className="fab fa-facebook-f"></i></div>
                                 <div> <i className="fab fa-twitter"></i></div>
@@ -157,11 +156,7 @@ goToProject(e){
                                     <button className="ui green button" style={{marginTop: '2rem'}}
                                         onClick={this.goToProject}
                                     >NEXT</button>
-                                </form>
-                            
-                            
-                                        
-                                
+                                </form>  
                             </div>
 
                         {/* DIV WHICH HOLDS THE QUESTIONS AND ANSWERS  */}
