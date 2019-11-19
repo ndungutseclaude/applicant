@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-
-import App from './component/App';
-
-ReactDom.render(<App/>, document.querySelector('#root'))
+import ReactDOM from 'react-dom';
+ import Questions from './Component/Questions';
+//import Loginauthentication from './Authentication/loginauthentication';
+ReactDOM.render( <Questions/ > , document.getElementById('root'));
