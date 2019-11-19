@@ -19,7 +19,7 @@ class QuestionsList extends React.Component {
 
     componentDidMount() {
         const jwt = getJwt()
-        //console.log(jwt);
+     
 
         if (!jwt) {
             console.log('no token found');

@@ -3,14 +3,13 @@ import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
 import './SignUp.css';
-
 class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: false
         }
     }
 
@@ -102,7 +101,7 @@ class SignUp extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <i className=" eye fas fa-eye" onClick="this.encrypting()"></i>
+                                <i className=" eye fas fa-eye" onClick="this.state.password" ></i>
                             </div>
                             <div className="btn-post">
                                 <button type="submit" className="btn btn-danger">START MY APPLICATION</button>
