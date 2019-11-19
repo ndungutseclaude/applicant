@@ -1,0 +1,174 @@
+.icons{
+    position: relative;
+    color:#FAAE0A; 
+} 
+
+   .clonings{
+       background: #4A4D51;
+   }
+    .title{
+    position: relative;
+    float: left;
+   font-size:40px;
+    width: 870px;
+    font-weight: bold;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+}   
+.tops{
+    position: relative;
+    top:3rem;
+    left:8px;
+}
+.cont{
+    position: relative;
+    top:3rem;
+    right:18rem;   
+   
+}
+  .content3{
+     position: relative;
+     top:-1rem;
+     left:1rem;
+ }  
+ .btn-danger{
+     margin-top:8%;
+    font-size:70%;
+    border-radius:0px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+ }
+ .exit{
+    position: relative;
+    border-bottom: 3px solid  #7E50D3;;
+    width:100%;
+   
+ }
+
+ .eye{
+    position: static;
+    margin-left:-7%;
+    margin-top:3%;
+   
+ }
+ .signing{
+     position: relative;
+     right:18%;
+     margin-top:40px;
+ }
+  .title1{
+    position: relative;
+    float: left;
+    left:1rem;
+   font-size:40px;
+    width: 870px;
+    top:-1rem;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ } 
+ 
+ .details{
+     position: relative;
+     width:50%;
+     left:14rem;
+     top:6rem;
+     border-radius:0px;
+     
+ }
+ ::placeholder{
+    color:#4A4D51; 
+ }
+  .btn-post{
+     position: relative;
+     top:20rem;
+     right:6rem;
+ } 
+  .or{
+      position: relative;
+      left:3rem;
+     padding:2%;
+     width:20%;
+     text-align: center;
+ } 
+ .divStyling{
+     position: relative;
+     top:16rem;
+  
+}
+ 
+ @media only screen and (max-width: 1190px){
+
+.titles{
+    top:0rem;
+    
+}
+.cont{
+    position: relative;
+    left:-21%;
+}
+.details{
+    position: relative;
+    left:19%;  
+}
+.btn-post{
+    left:-17%;
+}
+.exit{
+    left:-17%;
+}
+ }
+ @media only screen and (max-width: 770px){
+.details{
+    width: 80%;
+}
+.btn-post{
+    top:10rem;
+    left:7rem;
+}
+.exit{
+    left:0rem;
+    font-size: 80%;
+}
+.divStyling{
+    top:9rem;
+}
+ }
+ @media only screen and (max-width: 576px){
+     .cont{
+        position: relative;
+        left:5rem;
+        top:7rem;
+    }
+    .details{
+        left:2rem;
+        top:0rem;
+        width: 100%;
+    }
+    .titles{
+        
+        width: 80%;
+        top:-2rem;
+        left:3rem;
+    }
+    .btn-post{
+       top:4rem;
+       left:3rem;  
+    }
+    .title{
+        top:-4rem;
+    }
+    .title1{
+        top:-4rem;
+        left:9rem;
+ }
+ .divStyling{
+    top:2rem;
+}
+.or{
+    top:-3rem;
+   }
+   .exit{
+       top:-3rem;
+   }
+ }

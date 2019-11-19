@@ -1,0 +1,133 @@
+.icon{
+    color:#FAAE0A;
+}
+/* .title{
+    position: relative;
+    right:3%;
+   font-size:40px;
+    width: 870px;
+    font-weight: bold;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} */
+.logout{
+    position: relative;
+    font-weight: bold;
+   
+}
+
+.sign{
+    position: relative;
+    background-color:  #49BFD4;
+    border-radius:50%;
+    width: 120px;
+    height: 120px;
+    color: white;
+   }
+   .container{
+       position: relative;
+       top:3rem; 
+   }
+   small{
+    position: relative;
+    top:200%;
+    left:-2%; 
+}
+.footer{
+    position: relative;
+    top:-5rem;
+}
+.pencil{
+    position: relative;
+    font-size:40px;
+    left:68px;
+    color: #D13364;
+    top:10%; 
+}
+.bar{
+    position: relative;
+    left:-28%;
+    top:45px;
+    color: rgba(30, 69, 174, 0.5);
+}
+.ba{
+    position: relative;
+    left:47%;
+    top:35px;
+    width: 90px;
+    color: rgba(30, 69, 174, 0.5);
+}
+.sticky {
+    position: absolute;
+    font-size:60px;
+    transform: rotate(180deg);
+    top:20%; 
+    left:30px;   
+} 
+.btn{
+    
+color: #181C22;
+font-style: normal;
+font-weight: bold;
+}
+
+@media only screen and (max-width: 750px){
+
+.sign{
+    right:3rem;
+}
+}
+
+ @media only screen and (max-width: 575px){
+    .sign{
+        left:25rem;
+        top:-12rem;
+    }
+    .btn{
+        position: relative;
+        top:-4rem;
+     
+    }
+    
+     .title{
+        position: relative;
+        left:5rem;
+        
+      
+    } 
+    small{
+      
+        left:5rem;
+        top:-8rem;
+    }
+    .qustions{
+        position:relative;
+        
+        display: grid;
+        top:-10rem;
+        width: 90%;
+        left:3rem;
+    }
+    .buttonsStyling{
+        position: relative;
+        top:-6rem;
+        right: 3rem;
+        display:inline-flex
+    }
+    .footer{
+        position: relative;
+        top:-7rem;
+    }
+    .btn1{
+        position: relative;
+        top:-3rem;
+    }
+    .icon {
+        left:4%;
+        top:3rem;
+    }
+    
+    .logo{
+        left:2rem;
+    }
+    
+} 
