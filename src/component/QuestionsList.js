@@ -168,7 +168,7 @@ goToProject(e){
 
     }
 }
-
+}
 
 
 
