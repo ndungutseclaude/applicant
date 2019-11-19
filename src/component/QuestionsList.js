@@ -130,7 +130,6 @@ goToProject(e){
                                     </button>
                                 </div>
                             </div>
-                        </nav>
 
                         <div className=" tops row">
                             <div className=" icon col-sm-3">
