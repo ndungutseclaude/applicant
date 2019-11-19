@@ -141,7 +141,7 @@ goToProject(e){
                                 <h3 className="title">Rwanda</h3>
                             </div>
 
-{/* TESTING POST OF QUESTION */}
+{/* DISPLAY QUESTIONS AND POST ANSWERS ONE BY ONE */}
                             <div>
                                 <h1> You have {qArray.length} questions to Answer</h1>
                                 <form onSubmit={this.answerSubmition} className="ui form">
@@ -157,118 +157,6 @@ goToProject(e){
                                     >NEXT</button>
                                 </form>  
                             </div>
-
-                        {/* DIV WHICH HOLDS THE QUESTIONS AND ANSWERS  */}
-                             {/* <div className="container" style={{ paddingRight:'10rem', paddingLeft:'5rem'}}>
-                                
-                                <div className="row">
-                                    <div className="col">
-                                        {
-                                            this.state.questionslist.map ? this.state.questionslist.slice(0,devideArray).map((question)=>{
-                                                return (
-                                                    <div key={question.id}>
-                                                        <p>{question.description}</p>
-                                                        
-                                                        <input type="text" className="form-control" id="inputStyling"
-                                                            name="description"
-                                                            value={this.state.description}
-                                                            onChange={this.handleInputChange}
-                                                        />
-                                                    </div>
-                                                    
-                                                )
-                                            })
-                                            :null
-                                        }
-                                    </div>
-                                    <div className="col">
-                                        {
-                                            this.state.questionslist.map? this.state.questionslist.slice(devideArray).map((question)=>{
-                                                return (
-                                                    <div key={question.id}>
-                                                        <p>{question.description}</p>
-                                                        
-                                                        <input type="text" className="form-control" id="inputStyling"
-                                                            name="description"
-                                                            value={this.state.description}
-                                                            onChange={this.handleInputChange}
-                                                        />
-                                                    </div>
-                                                )
-                                            })
-                                            :null
-                                        }
-                                    </div>
-                
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="middle row">
-                            <div className="col-sm-3">
-
-                            </div>
-                            <div className="col-sm-9">
-                                <small>Please complete the following questions</small>
-                            </div>
-                        </div>
-                    </div>
-                    {/* DIV WHICH HOLDS THE QUESTIONS AND ANSWERS */}
-//                     <div className="container" >
-//                         <div className="qustions row">
-//                             <div className="col">
-//                                 {
-//                                     this.state.questionslist.map ? this.state.questionslist.slice(0, devideArray).map((question) => {
-//                                         return (
-//                                             <div key={question.id}>
-//                                                 <p>{question.description}</p>
-
-//                                                 <input type="text" className="form-control" id="inputStyling"
-//                                                     name="description"
-//                                                     value={this.state.description}
-//                                                     onChange={this.handleInputChange}
-//                                                 />
-//                                             </div>
-
-//                                         )
-//                                     })
-//                                         : null
-//                                 }
-//                             </div>
-//                             <div className="col">
-//                                 {
-//                                     this.state.questionslist.map ? this.state.questionslist.slice(devideArray).map((question) => {
-//                                         return (
-//                                             <div key={question.id}>
-//                                                 <p>{question.description}</p>
-
-//                                                 <input type="text" className="form-control" id="inputStyling"
-//                                                     name="description"
-//                                                     value={this.state.description}
-//                                                     onChange={this.handleInputChange}
-//                                                 />
-//                                             </div>
-//                                         )
-//                                     })
-//                                         : null
-//                                 }
-//                             </div>
-
-//                         </div>
-
-//                         <div className="row">
-//                             <div className="buttonsStyling">
-//                                 <button className="btn1" id="laterbtn">
-//                                     save to continiou later
-//                                         </button>
-//                                 <button className="btn btn-danger" id="nextbtn">
-//                                     NEXT
-//                                         </button>
-//                                     </div>
-                
-//                                 </div> 
-                                
-//                             </div> */}
                         
                         {/* FOOTER     */}
                             <Footer/>
