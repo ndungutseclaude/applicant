@@ -27,8 +27,9 @@ box-sizing: border-box;
 
 /* FOOTER STYLING */
 .divStyling{
+    position: absolute;
     background:#5031A9;
-    margin:2rem;
+    margin-top: 2rem;
     height: 4rem;
 }
 
@@ -39,9 +40,5 @@ box-sizing: border-box;
 }
 /* LOGIN STYLING */
 
-.btn-show-hide-pwd{
-    opacity: 0.5;
-}
-.btn-show-hide-pwd:hover{
-    opacity: 1;
-}
+
+/* questionListStyling */

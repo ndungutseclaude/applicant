@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import Header from './Header';
 import Footer from './Footer';
 import './SignUp.css';
@@ -35,8 +37,11 @@ class SignUp extends React.Component {
        axios.post('https://codecatalyst-test.herokuapp.com/api/register',{username: this.state.username, 
             email: this.state.email, password:this.state.password})
             .then((res)=>{
+                if(res.data.message ==='You were registered, now you can login and a welcoming message was sent to your email box'){
+                    this.props.history.push('/')
+                }
+                alert(res.data.message)
                 //console.log(res.data.message)
-                this.props.history.push('/')
             })
             .catch(err=>{
                 alert('email already registered')
@@ -105,7 +110,8 @@ class SignUp extends React.Component {
                                 <div className="btn-post">
                                     <button type="submit" className="btn btn-danger">START MY APPLICATION</button>
                                     <p className="or" >or</p>
-                                    <p className="exit">CONTINUE EXISTING APPLICATION</p>
+                                    <Link to="/" className="exit">already have account?</Link>
+                                    
                                 </div>
                             </div>
 

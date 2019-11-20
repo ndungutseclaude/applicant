@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './Questionlist.css';
-import { withRouter } from 'react-router-dom';
 
-import './App.css';
+//import './App.css';
 import Footer from './Footer';
 import { getJwt } from './utils/jwt';
 
@@ -29,22 +28,28 @@ class QuestionsList extends React.Component {
             console.log('no token found');
             this.props.history.push('/')
         }
-        // else if(this.questionsLength === 0){
-        //     console.log('you have answered your question go with the project')
-        //     this.props.history.push('/project')
-        // }
         
         axios.get('https://codecatalyst-test.herokuapp.com/api/',
         {headers: {Authorization: `Token ${jwt}`}})
         .then(res =>{
-            this.setState({questionslist: res.data})
-            //console.log(this.state.questionslist)
-            //console.log(res.data.length);
+            if(res.data.length === 0){
+                this.props.history.push('/project')
+                //console.log('done')
+            }
+            
+            else if(res.data){
+                console.log(res)
+                this.setState({questionslist: res.data})
+            }
             
         })
         .catch(err =>{
+            
+            //this.props.history.push('/')
+            
+
             localStorage.removeItem("user-token")
-            this.props.history.push('/')
+            this.props.history.push('/registrationDone')
         })
     }
 
@@ -119,8 +124,9 @@ goToProject(e){
         
         return (
             <div>
+                <div className="container">
                         {/* DIV WHICH HOLD HEADER */}
-                            <div>
+                            <div >
                                 
                                     <img src="code_catalyst.svg" alt="not available"/>
                                     <button onClick={this.logoutFunctin} 
@@ -142,10 +148,10 @@ goToProject(e){
                             </div>
 
 {/* DISPLAY QUESTIONS AND POST ANSWERS ONE BY ONE */}
-                            <div>
-                                <h1> You have {qArray.length} questions to Answer</h1>
+                            <div className="divWithQuestion">
+                                <h1 style={{color: 'gray', padding: '3rem'}}> You still have {qArray.length} questions, anser all questions and clink on NEXT BUTTON to see the project</h1>
                                 <form onSubmit={this.answerSubmition} className="ui form">
-                                    <label>{qArray[qID]}</label> 
+                                    <h2>{qArray[qID]}</h2> 
                                     <input type="text" required 
                                         name='answer' 
                                         value={this.state.answer} 
@@ -157,9 +163,10 @@ goToProject(e){
                                     >NEXT</button>
                                 </form>  
                             </div>
+                </div>
                         
-                        {/* FOOTER     */}
-                            <Footer/>
+                {/* FOOTER     */}
+                <Footer/>
 
             </div>
         )
