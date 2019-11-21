@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import './SignUp.css'
+import './login.css'
 
 
 class Login extends React.Component{
@@ -32,6 +32,7 @@ class Login extends React.Component{
     //FORM SUBMITION
     formSubmit=(e)=>{
         e.preventDefault();
+        console.log('submitted')
         axios.post('https://codecatalyst-test.herokuapp.com/api/login',{email: this.state.email, password: this.state.password})
         .then(res => {
             localStorage.setItem("user-token",res.data.token)
@@ -48,31 +49,50 @@ class Login extends React.Component{
         return(
             <div>
                 <Header/>
-                <div className="ui container" style={{marginTop: '10px'}}>
-                <h1> Login Form</h1>
-                <form onSubmit={this.formSubmit} className="ui form" style={{marginRight: '30rem', marginLeft: '8rem'}}>
-                    <label> Email:</label>
-                    <input type="email" required
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                    />
-                    <label> Password: </label>
-                    <div className="ui field">
-                    <input type= {(isPasswordShown)? "text": "password"} required
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                    />
-                    <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility}></i>
-                    </div>
-                    <button type="submit" className="ui button" style={{margin:'2rem'}}>Login</button>
-                    <Link to="/SignUp">
-                        Don't have an accoutn?
-                    </Link>
-                </form>
+                <aside>
+                                    <div><i className="fab fa-facebook-f facebook"></i></div>
+                                    <div><i className="fab fa-twitter twitter"></i></div>
+                                    <div><i className="fab fa-linkedin-in linked"></i></div>
+                                    <div><i className="fas fa-paper-plane send"></i></div>
+                                </aside>
                 
-            </div>
+            <div class="login-dark form">
+                    <form onSubmit={this.formSubmit}>
+                    <div className="text-center head">Code Catalyst Rwanda</div>
+                        <div className="welcome">Welcome back! fill in the info to continue</div>
+                        <div className="form-group">Email<br/>
+                        <div className="ui right labeled input email">
+                            <input type="email" required 
+                            name="email" 
+                            placeholder="Email"
+                            value={this.state.email}
+                            onChange={this.handleChange} 
+                            className="form-control" />
+                        </div>
+                        </div>
+                        
+                        <div className="form-group">Password<br/>
+                        <div className="ui right labeled input password">
+                            <input type={(isPasswordShown)? "text": "password"} required 
+                            name="password"
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleChange} />
+                            <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility}></i>
+                    </div>
+                    </div>
+                    
+                    <button type="subnit" className="btn btn-danger button">Log in</button> 
+                    <div class="or">or<br/>
+
+                            <Link to="/SignUp">
+                            <a className='post'>START YOUR APPLICATION</a> 
+                            </Link>
+                            </div>
+                    
+                    </form>
+                    </div>
+
                 <Footer/>
             </div>
         )
