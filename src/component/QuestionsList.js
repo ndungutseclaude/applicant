@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import './Questionlist.css';
+//import './Questionlist.css';
+import './question.css';
 
 //import './App.css';
 import Footer from './Footer';
@@ -33,7 +34,8 @@ class QuestionsList extends React.Component {
         {headers: {Authorization: `Token ${jwt}`}})
         .then(res =>{
             if(res.data.length === 0){
-                this.props.history.push('/project')
+                 this.props.history.push('/project')
+                //this.props.history.push('/AddUrl')
                 //console.log('done')
             }
             
@@ -100,6 +102,7 @@ goToProject(e){
     e.preventDefault()
     if(this.questionsLength === 0){
         this.props.history.push('/project')
+        //this.props.history.push('/AddUrl')
     }
     console.log('answer all question')
     window.location.reload(false)
@@ -136,20 +139,42 @@ goToProject(e){
                                     </button>
                             </div>
 
-                            <div className=" icon col-sm-3">
-                                <div><i className="fab fa-facebook-f"></i></div>
-                                <div> <i className="fab fa-twitter"></i></div>
-                                <div><i className="fab fa-linkedin-in"></i></div>
-                                <div> <i className="fas fa-paper-plane"></i></div>
+                            <div className=" tops row">
+                        <div className=" icons col-sm-3">
+                            <div><i className="fab fa-facebook-f"></i></div>
+                            <div> <i className="fab fa-twitter"></i></div>
+                            <div><i className="fab fa-linkedin-in"></i></div>
+                            <div> <i className="fas fa-paper-plane"></i></div>
+                        </div>
+                        <div className="col-sm-6">
+                            <h3 className="title">Code Catalyst </h3>
+                            <h3 className="title">Rwanda</h3>
+                        </div>
+                        <div className=" col-sm-3 ">
+                            <div className="sign">
+                                <i className=" sticky fas fa-sticky-note"></i>
+                                <i className="ba  fas fa-bars"></i>
+                                <i className="bar  fas fa-bars"></i>
+                                <i className="pencil fas fa-pencil-alt"></i>
                             </div>
-                            <div className=" col-sm-6 ">
-                                <h3 className="title">Code Catalyst </h3>
-                                <h3 className="title">Rwanda</h3>
-                            </div>
+                        </div>
+                    </div>
+                    <div className="middle row">
+                        <div className="col-sm-3">
+                        </div>
+                        <div className="col-sm-9">
+                            <small style={{marginBottom: "2rem"}}> lease complete the following questions</small>
+                        </div>
+                    </div>
+
+
 
 {/* DISPLAY QUESTIONS AND POST ANSWERS ONE BY ONE */}
-                            <div className="divWithQuestion">
-                                <h1 style={{color: 'gray', padding: '3rem'}}> You still have {qArray.length} questions, anser all questions and clink on NEXT BUTTON to see the project</h1>
+                            <div className="table row">
+                                <small> <b>You still have {qArray.length} questions, answer all questions and click on NEXT BUTTON to see the project </b></small>
+                                <div className="col-sm-3">
+                                </div>
+                                <div className="col-sm-6">
                                 <form onSubmit={this.answerSubmition} className="ui form">
                                     <h2>{qArray[qID]}</h2> 
                                     <input type="text" required 
@@ -157,12 +182,16 @@ goToProject(e){
                                         value={this.state.answer} 
                                         onChange={this.handleInputChange} 
                                     /> 
+                        
                                     <button className="btn ">SUBMIT ANSWER</button>
-                                    <button className="ui green button" style={{marginTop: '2rem'}}
+                                    <button className="ui green button" style={{marginTop: '2rem'}} 
                                         onClick={this.goToProject}
                                     >NEXT</button>
-                                </form>  
+                                </form> 
+                                </div> 
                             </div>
+                            
+                                    
                 </div>
                         
                 {/* FOOTER     */}
@@ -181,3 +210,4 @@ goToProject(e){
 
 
 export default QuestionsList;
+

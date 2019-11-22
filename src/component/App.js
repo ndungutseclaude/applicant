@@ -6,6 +6,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Project from './project';
 import RegistrationDone from './registrationDone';
+import AddUrl from './AddUrl';
 
 
 const App =()=>{
@@ -18,6 +19,7 @@ const App =()=>{
                     <Route exact path="/SignUp" component={SignUp}/>
                     <Route exact path="/project" component={Project}/>
                     <Route exact path="/registrationDone" component={RegistrationDone}/>
+                    <Route exact path="AddUrl" component={AddUrl}/>
                     {/* <Route exact path="/SignUp" component={SignUp}/>
                     <Route exact path="/QuestionsList" component={QuestionsList}/>
                     <Route exact path="/Test" component={Test}/> */}
