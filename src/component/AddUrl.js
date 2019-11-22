@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-// import {connect} from 'react-redux';
 import { getJwt } from './utils/jwt';
 import axios from 'axios';
 import './Component.css';
 import Header from './Header';
 import Footer from './Footer';
-//import {addContact} from '../actions/contactActions';
+
 
 
 class AddUrl extends Component {
   state = {
     git_hub_url: '',
     heroku_url:'',
+    link:'',
     errors: {}
   };
 
@@ -28,6 +27,7 @@ class AddUrl extends Component {
     }
     
     var data={git_hub_url:this.state.git_hub_url, heroku_url:this.state.heroku_url}
+    var link={link:this.state.link}
        
        console.log(jwt)
     axios.post('https://codecatalyst-test.herokuapp.com/api/project/submit',data,
@@ -41,10 +41,19 @@ class AddUrl extends Component {
         console.log('the request denied')
         this.props.history.push('/')
     })
+    console.log(jwt)
+    axios.get('https://codecatalyst-test.herokuapp.com/api/project',link,
+    {headers: {Authorization: `Token ${jwt}`}})
+    .then(res =>{
+        this.setState({url: res.data})
+        
+    })
+    .catch(err =>{
+      //localStorage.removeItem("user-token")
+      console.log('the request denied')
+      //this.props.history.push('/')
+    })
  }
-
- //GET PROGECT
-
 
 //FUNCTION TO LOGOUT
  logoutFunction=(e)=>{
@@ -77,7 +86,7 @@ class AddUrl extends Component {
 
               <h1>Submit your Project</h1> 
               <p>Project Details: 
-              <Link to="codecatalyst-test.herokuapp.com/api/project/"> 
+              <Link to= "https://codecatalyst-test.herokuapp.com/api/project/"> 
               <span>This is the link to the project you need to complete <i className="fas fa-arrow-up"></i></span>
               </Link>
               </p>
@@ -110,13 +119,10 @@ class AddUrl extends Component {
                                         onChange={this.onChange}
                                         />
                                 </div>
-                      </div>
-                
-                                <button type="submit" className="btn btn-success button">SUBMIT APPLICATION</button>
-                  
+                      </div>              
+                                <button type="submit" className="btn btn-success button1">SUBMIT APPLICATION</button>                 
               </form>
               <Footer/>
-            
     </div>
 
     );

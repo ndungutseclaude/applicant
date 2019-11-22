@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './Questionlist.css';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
 
 import './App.css';
 import Footer from './Footer';

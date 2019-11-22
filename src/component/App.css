@@ -45,3 +45,10 @@ box-sizing: border-box;
 .btn-show-hide-pwd:hover{
     opacity: 1;
 }
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .divStyling{
+        width: 1500px;
+         margin-left: -9%;
+    }
+    }
