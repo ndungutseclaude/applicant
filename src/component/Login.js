@@ -12,7 +12,8 @@ class Login extends React.Component{
         this.state={
             email:'',
             password:'',
-            isPasswordShown:false
+            isPasswordShown:false,
+            loading: false
         }
     }
 
@@ -32,10 +33,11 @@ class Login extends React.Component{
     //FORM SUBMITION
     formSubmit=(e)=>{
         e.preventDefault();
-        localStorage.removeItem("user-token")
+        this.setState({loading: true})
         axios.post('https://codecatalyst-test.herokuapp.com/api/login',{email: this.state.email, password: this.state.password})
         .then(res => {
             //console.log(res)
+    
             if(res.data.token){
                 localStorage.setItem("user-token",res.data.token)
                 this.props.history.push('/QuestionsList')
@@ -48,6 +50,7 @@ class Login extends React.Component{
         .catch(err => {
             alert('try again')
             this.setState({email:'',password:''})
+            this.setState({loading: false})
             console.log(err)
         })
         
@@ -75,7 +78,10 @@ class Login extends React.Component{
                         />
                         <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility}></i>
                         </div>
-                        <button type="submit" className="ui button" style={{margin:'2rem'}}>Login</button>
+                        <button type="submit" className="ui button" style={{margin:'2rem'}}disabled={this.state.loading}>
+                            {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
+                            Login
+                        </button>
                         <Link to="/SignUp">
                             Don't have an accoutn?
                         </Link>

@@ -27,10 +27,11 @@ box-sizing: border-box;
 
 /* FOOTER STYLING */
 .divStyling{
-    position: absolute;
+    position: relative;
     background:#5031A9;
-    margin-top: 2rem;
-    height: 4rem;
+    top: 2px;
+    /* margin-top: 2rem; */
+    /* height: 4rem; */
 }
 
 .pStyling{

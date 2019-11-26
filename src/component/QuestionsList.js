@@ -13,7 +13,8 @@ class QuestionsList extends React.Component {
         super(props);
         this.state={
             questionslist:[],
-            answer:''
+            answer:'',
+            loading: false
              
         }
         this.goToProject = this.goToProject.bind(this)
@@ -29,12 +30,11 @@ class QuestionsList extends React.Component {
             console.log('no token found');
             this.props.history.push('/')
         }
-        
         axios.get('https://codecatalyst-test.herokuapp.com/api/',
         {headers: {Authorization: `Token ${jwt}`}})
         .then(res =>{
             if(res.data.length === 0){
-                 this.props.history.push('/project')
+                this.props.history.push('/project')
                 //this.props.history.push('/AddUrl')
                 //console.log('done')
             }
@@ -79,7 +79,7 @@ answerSubmition=(e)=>{
         console.log('you are not logged in')
         this.props.history.push('/')
     }
-
+    this.setState({loading: true})
     //console.log(this.questionsLength)
     axios.post(`https://codecatalyst-test.herokuapp.com/api/${this.myVariable}`,
     {description: this.state.answer},
@@ -124,7 +124,6 @@ goToProject(e){
     //console.log(idArray.length)
     let qID = 0
     if(this.state.questionslist){
-        
         return (
             <div>
                 <div className="container">
@@ -183,7 +182,10 @@ goToProject(e){
                                         onChange={this.handleInputChange} 
                                     /> 
                         
-                                    <button className="btn ">SUBMIT ANSWER</button>
+                                    <button className="btn">
+                                        { this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
+                                        SUBMIT ANSWER
+                                    </button>
                                     <button className="ui green button" style={{marginTop: '2rem'}} 
                                         onClick={this.goToProject}
                                     >NEXT</button>
