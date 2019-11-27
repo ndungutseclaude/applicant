@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import './SignUp.css'
+import './App.css';
 
 
 class Login extends React.Component{
@@ -60,33 +60,50 @@ class Login extends React.Component{
         return(
             <div>
                 <Header/>
-                <div className="ui container" style={{margin: '10px'}}>
-                <h1> Login Form</h1>
-                    <form onSubmit={this.formSubmit} className="ui form" style={{marginRight: '30rem', marginLeft: '8rem', marginBottom: '2px'}}>
-                        <label> Email:</label>
-                        <input type="email" required
-                            name="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                        <label> Password: </label>
-                        <div className="ui field">
-                        <input type= {(isPasswordShown)? "text": "password"} required
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                        <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility}></i>
+                <div className="ui container">
+                    <div className=" wrapper">
+                        <div className="myicons">
+                            <i className="fab fa-facebook-f" id="facebookIcon"></i>
+                            <i className="fab fa-twitter" id="twitterIcon"></i>
+                            <i className="fab fa-linkedin-in" id="linkedIcon"></i>
+                            <i className="fas fa-paper-plane" id="paperplaneIcon"></i>                  
                         </div>
-                        <button type="submit" className="ui button" style={{margin:'2rem'}}disabled={this.state.loading}>
-                            {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
-                            Login
-                        </button>
-                        <Link to="/SignUp">
-                            Don't have an accoutn?
-                        </Link>
-                    </form>
-                
+                        <div>   
+                            <h1 style={{fontFamily: 'time new roman'}}> <b>Code Catalyst <br/><span style={{paddingLeft: '4rem'}}> Rwanda</span></b></h1>
+                            <p style={{paddingLeft: '2rem'}}>Welcome back! Fill in the info to continue</p>
+                            <form onSubmit={this.formSubmit} className="ui form form_containing_login">
+                                <label> Email:</label>
+                                <input type="email" style={{background: '#F4F9FF', borderRadius: '0px'}} required
+                                    placeholder="Your email address"
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                                <label> Password: </label>
+                                <div className="ui field">
+                                <input type= {(isPasswordShown)? "text": "password"} style={{background: '#F4F9FF', borderRadius:'0px'}} required
+                                    placeholder="Your password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                                <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility} id="ijisho"></i>
+                                </div>
+                                <div className="ButtonsOnLoginForm">
+
+                                
+                                    <button type="submit" className="ui button" id="loginButton" disabled={this.state.loading}>
+                                        {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
+                                        Login
+                                    </button>
+                                    <p id="orStyling">or</p>
+                                    <Link to="/SignUp" id="dontHaveAccount">
+                                        Don't have an accoutn?
+                                    </Link>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <Footer/>
             </div>

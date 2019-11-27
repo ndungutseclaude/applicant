@@ -24,22 +24,77 @@ box-sizing: border-box;
     border-radius: 0px;
     margin-right: 2rem;
 }
-
+/* LOGIN STYLING */
+.wrapper{
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    margin-top: 2rem;
+}
+.form_containing_login{
+    padding-right: 2rem;
+    
+}
+.myicons{
+    display: flex;
+    flex-direction: column;
+    color:orange;
+}
+#facebookIcon{
+    margin-bottom: 10px;
+}
+#linkedIcon{
+    margin-bottom: 10px;
+}
+#twitterIcon{
+    margin-bottom: 10px;
+}
+#paperplaneIcon{
+    margin-bottom: 10px;
+}
+.ButtonsOnLoginForm{
+    display: flex;
+    flex-direction: column;
+    width: 11rem;
+    margin-left: 5em;
+}
+#loginButton{
+    background: #F14B59;
+    border-radius: 0px;
+    margin-bottom: 3px;
+    color: white;
+}
+#orStyling{
+    padding-left: 5rem;
+}
+#dontHaveAccount{
+    border-radius: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 4px solid #146D56;
+}
+#ijiso{
+    position: absolute;
+width: 26.77px;
+height: 16px;
+left: 1198px;
+top: 730px;
+}
 /* FOOTER STYLING */
 .divStyling{
-    position: relative;
     background:#5031A9;
-    top: 2px;
-    /* margin-top: 2rem; */
-    /* height: 4rem; */
+    position: absolute;
+    bottom: 0px;
+    padding-top: 20px;
+    height: 12rem;
 }
 
 .pStyling{
     text-align: center;
-    font-family: poppins;
-     padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    padding: 5rem;
 }
-/* LOGIN STYLING */
 
 
 /* questionListStyling */
