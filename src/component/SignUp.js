@@ -13,7 +13,8 @@ class SignUp extends React.Component {
             username:'',
             email:'',
             password:'',
-            isPasswordShown: false
+            isPasswordShown: false,
+            loading:false
         }
     }
 
@@ -34,6 +35,7 @@ class SignUp extends React.Component {
     //FORM SUBMITION
     formSubmit = (e) => {
         e.preventDefault();
+        this.setState({loading: true})
        axios.post('https://codecatalyst-test.herokuapp.com/api/register',{username: this.state.username, 
             email: this.state.email, password:this.state.password})
             .then((res)=>{
@@ -108,7 +110,10 @@ class SignUp extends React.Component {
                                     <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"}  onClick={this.togglePasswordVisibility}></i>
                                 </div>
                                 <div className="btn-post">
-                                    <button type="submit" className="btn btn-danger">START MY APPLICATION</button>
+                                    <button type="submit" className="btn btn-danger">
+                                        {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
+                                        START MY APPLICATION
+                                    </button>
                                     <p className="or" >or</p>
                                     <Link to="/" className="exit">already have account?</Link>
                                     
