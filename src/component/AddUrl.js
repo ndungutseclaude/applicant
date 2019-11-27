@@ -86,11 +86,17 @@ class AddUrl extends Component {
 
               <h1>Submit your Project</h1> 
               <p>Project Details: 
-              <Link to= "https://codecatalyst-test.herokuapp.com/api/project/"> 
+              <a href="https://drive.google.com/drive/folders/1JTP0lGGTgGhFAuIl27WeMsvenmHzflT5" target='_blank'>
               <span>This is the link to the project you need to complete <i className="fas fa-arrow-up"></i></span>
-              </Link>
+              </a>
               </p>
-              <div className="pencil"></div>
+              
+                    <div className="crayon">
+                        <div className='pencil'></div>
+                        <div className='before'></div>
+                        <div className='after'></div>
+                    </div>
+
           </div>
                   <form onSubmit={this.onSubmit}>    
                       <div className="form-row names" >

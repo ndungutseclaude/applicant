@@ -86,7 +86,7 @@ class Login extends React.Component{
                     <div class="or">or<br/>
 
                             <Link to="/SignUp">
-                            <a className='post'>START YOUR APPLICATION</a> 
+                            <div className='post'>START YOUR APPLICATION</div> 
                             </Link>
                             </div>
                     
