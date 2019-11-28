@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Success from './Success';
 import { getJwt } from './utils/jwt';
 import axios from 'axios';
 import './Component.css';
@@ -12,9 +12,16 @@ class AddUrl extends Component {
   state = {
     git_hub_url: '',
     heroku_url:'',
-    link:'',
+    alert_message:'',
     errors: {}
   };
+  //handle input
+  handleChange=(event)=>{
+    event.preventDefault();
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+     }
 
   onSubmit=(event)=>{ 
     event.preventDefault()
@@ -27,31 +34,18 @@ class AddUrl extends Component {
     }
     
     var data={git_hub_url:this.state.git_hub_url, heroku_url:this.state.heroku_url}
-    var link={link:this.state.link}
        
        console.log(jwt)
     axios.post('https://codecatalyst-test.herokuapp.com/api/project/submit',data,
     {headers: {Authorization: `Token ${jwt}`}})
     .then(res =>{
-        this.setState({url: res.data})
+        this.setState({alert_message:'success'})
         console.log('well done');
     })
     .catch(err =>{
         localStorage.removeItem("user-token")
         console.log('the request denied')
         this.props.history.push('/')
-    })
-    console.log(jwt)
-    axios.get('https://codecatalyst-test.herokuapp.com/api/project',link,
-    {headers: {Authorization: `Token ${jwt}`}})
-    .then(res =>{
-        this.setState({url: res.data})
-        
-    })
-    .catch(err =>{
-      //localStorage.removeItem("user-token")
-      console.log('the request denied')
-      //this.props.history.push('/')
     })
  }
 
@@ -61,15 +55,13 @@ class AddUrl extends Component {
    this.props.history.push('/')
    console.log('you are loggedOut')
  }
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
-
-
   render() {
     const { git_hub_url,heroku_url} = this.state;
 
     return (
       <div className="Phonebook" >
       <Header/>
+      {this.state.alert_message=="success"?<Success/>:null}
           <div className='heading'>
 
                                   <div className="info">
@@ -108,7 +100,7 @@ class AddUrl extends Component {
                                       id="cardCVC" 
                                       name='git_hub_url'
                                       value={git_hub_url}
-                                      onChange={this.onChange}
+                                      onChange={this.handleChange}
                                     />
                               </div>
                       </div>
@@ -122,7 +114,7 @@ class AddUrl extends Component {
                                         id="cardCVC"
                                         name='heroku_url' 
                                         value={heroku_url}
-                                        onChange={this.onChange}
+                                        onChange={this.handleChange}
                                         />
                                 </div>
                       </div>              

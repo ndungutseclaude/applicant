@@ -56,7 +56,7 @@ class Login extends React.Component{
                                     <div><i className="fas fa-paper-plane send"></i></div>
                                 </aside>
                 
-            <div class="login-dark form">
+            <div className="login-dark form">
                     <form onSubmit={this.formSubmit}>
                     <div className="text-center head">Code Catalyst Rwanda</div>
                         <div className="welcome">Welcome back! fill in the info to continue</div>
@@ -83,7 +83,7 @@ class Login extends React.Component{
                     </div>
                     
                     <button type="subnit" className="btn btn-danger button">Log in</button> 
-                    <div class="or">or<br/>
+                    <div className="or">or<br/>
 
                             <Link to="/SignUp">
                             <div className='post'>START YOUR APPLICATION</div> 
