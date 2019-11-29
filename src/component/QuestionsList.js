@@ -34,8 +34,8 @@ class QuestionsList extends React.Component {
         {headers: {Authorization: `Token ${jwt}`}})
         .then(res =>{
             if(res.data.length === 0){
-                this.props.history.push('/project')
-                //this.props.history.push('/AddUrl')
+                //this.props.history.push('/project')
+                this.props.history.push('/AddUrl')
                 //console.log('done')
             }
             
@@ -101,8 +101,8 @@ answerSubmition=(e)=>{
 goToProject(e){
     e.preventDefault()
     if(this.questionsLength === 0){
-        this.props.history.push('/project')
-        //this.props.history.push('/AddUrl')
+        //this.props.history.push('/project')
+        this.props.history.push('/AddUrl')
     }
     console.log('answer all question')
     window.location.reload(false)
