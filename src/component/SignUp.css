@@ -1,3 +1,60 @@
+.signUpWrapper{
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    margin-top: 3rem;
+}
+.signUpIcons{
+    display: flex;
+    flex-direction: column;
+    color: #FAAE0A;
+    margin-left: 1rem;
+}
+.textStyling{
+    margin-left: 5rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    font-size: small;
+}
+.form-container{
+    margin-right: 15rem;
+    margin-top: 3rem;
+}
+.labelStyling{
+    font-weight: lighter;
+}
+#inputStyling{
+    border-radius: 0px;
+    border-style: hidden;
+    background: #F4F9FF;
+}
+.buttonsDiv{
+    margin-top: 1rem;
+    padding-left: 6rem;
+    padding-right: 3rem;
+}
+#submitButtonStyling{
+    text-align: center;
+    background: #F14B59;
+    border-radius: 0px;
+    color: white;
+}
+#alreadyHaveAccount{
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid  #7E50D3;
+}
+#orStyling{
+    padding-top: 1rem;
+    padding-left: 5rem;
+    padding-right: 20rem;
+}
+.headerStyling{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+/* YVETTE */
 .icons{
     position: relative;
     color:#FAAE0A; 
@@ -26,11 +83,12 @@
     right:18rem;   
    
 }
-  .content3{
-     position: relative;
-     top:-1rem;
-     left:1rem;
- }  
+.content3{
+    position: relative;
+    top:-1rem;
+    left:1rem;
+}
+  
  .btn-danger{
      margin-top:8%;
     font-size:70%;

@@ -55,8 +55,71 @@ class SignUp extends React.Component {
             const { isPasswordShown } = this.state
             return (
                 <div>
+                    <Header/>
+                    <div className="ui container">
+                        <div className="signUpWrapper">
+                            <div className="signUpIcons">
+                                <i className="fab fa-facebook-f"></i>
+                                <i className="fab fa-twitter"></i>
+                                <i className="fab fa-linkedin-in"></i>
+                                <i className="fas fa-paper-plane"></i>
+                            </div>
+                            <div>
+                                <h1 className="headerStyling">Code Catalyst <br/><span style={{marginLeft: '6rem'}}>Rwanda</span></h1>
+                                <p className="textStyling">
+                                    Want to become a top developer in Rwanda<br/>
+                                    and work with US-based startup companies?<br/>
+                                    Complete our coding application now.
+                                </p>
+                                    <form onSubmit={this.formSubmit} className="ui form form-container">
+                                        <div>
+                                            <div>
+                                                <label className="labelStyling"> UserName:</label>
+                                                <input id="inputStyling"
+                                                    type="text" required
+                                                    name="username"
+                                                    placeholder="Your username"
+                                                    value={this.state.username}
+                                                    onChange={this.handleChange}
+                                                />
+                                                <label className="labelStyling"> Email:</label>
+                                                <input id="inputStyling"
+                                                    type="email" required
+                                                    name="email"
+                                                    placeholder="Your email address"
+                                                    value={this.state.email}
+                                                    onChange={this.handleChange}
+                                                />
+                                                <label className="labelStyling"> password:</label>
+                                                <input id="inputStyling"
+                                                    type={(isPasswordShown)? "text":"password"} required
+                                                    name="password"
+                                                    placeholder="Your password"
+                                                    value={this.state.password}
+                                                    onChange={this.handleChange}
+                                                />
+                                                <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"}  onClick={this.togglePasswordVisibility}></i>
+                                            </div>
+                                            <div className="buttonsDiv">
+                                                <button type="submit" className="ui btn" id="submitButtonStyling">
+                                                    {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
+                                                    START MY APPLICATION
+                                                </button>
+                                                <p id="orStyling">or</p>
+                                                <Link to="/" id="alreadyHaveAccount">already have account?</Link>
+                                                
+                                            </div>
+                                        </div>
+
+                            </form>
+                            </div>
+                            <div>
+                                {/* this div is the div to add much space in right */}
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div className="container">
+                    {/* <div className="container">
                         <Header />
                         <div className=" tops row">
                             <div className=" icons col-sm-3">
@@ -122,7 +185,7 @@ class SignUp extends React.Component {
 
                         </form>
 
-                    </div>
+                    </div> */}
                     <Footer />
             </div>
 
