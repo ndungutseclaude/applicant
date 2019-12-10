@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
-import './SignUp.css';
+//import './SignUp.css';
+import './App.css'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -57,15 +58,15 @@ class SignUp extends React.Component {
                 <div>
                     <Header/>
                     <div className="ui container">
-                        <div className="signUpWrapper">
-                            <div className="signUpIcons">
-                                <i className="fab fa-facebook-f"></i>
-                                <i className="fab fa-twitter"></i>
-                                <i className="fab fa-linkedin-in"></i>
-                                <i className="fas fa-paper-plane"></i>
+                        <div className="wrapper">
+                            <div className="myicons">
+                                <i className="fab fa-facebook-f" id="facebookIcon"></i>
+                                <i className="fab fa-twitter" id="twitterIcon"></i>
+                                <i className="fab fa-linkedin-in" id="linkedIcon"></i>
+                                <i className="fas fa-paper-plane" id="paperplaneIcon"></i>
                             </div>
                             <div>
-                                <h1 className="headerStyling">Code Catalyst <br/><span style={{marginLeft: '6rem'}}>Rwanda</span></h1>
+                                <h1 style={{fontFamily: 'Taviraj',fontStyle: 'normal', fontWeight: 'bold'}}>Code Catalyst <br/><span style={{paddingLeft: '4rem'}}>Rwanda</span></h1>
                                 <p className="textStyling">
                                     Want to become a top developer in Rwanda<br/>
                                     and work with US-based startup companies?<br/>
@@ -90,7 +91,7 @@ class SignUp extends React.Component {
                                                     value={this.state.email}
                                                     onChange={this.handleChange}
                                                 />
-                                                <label className="labelStyling"> password:</label>
+                                                <label className="labelStyling"> Password:</label>
                                                 <input id="inputStyling"
                                                     type={(isPasswordShown)? "text":"password"} required
                                                     name="password"
@@ -98,15 +99,15 @@ class SignUp extends React.Component {
                                                     value={this.state.password}
                                                     onChange={this.handleChange}
                                                 />
-                                                <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"}  onClick={this.togglePasswordVisibility}></i>
+                                                <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"}  onClick={this.togglePasswordVisibility}id="eyeONright" ></i>
                                             </div>
-                                            <div className="buttonsDiv">
-                                                <button type="submit" className="ui btn" id="submitButtonStyling">
+                                            <div className="ButtonsOnSugnupForm">
+                                                <button type="submit" className="ui button" id="loginButton">
                                                     {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
                                                     START MY APPLICATION
                                                 </button>
                                                 <p id="orStyling">or</p>
-                                                <Link to="/" id="alreadyHaveAccount">already have account?</Link>
+                                                <Link to="/" id="dontHaveAccount">already have account?</Link>
                                                 
                                             </div>
                                         </div>
@@ -114,79 +115,13 @@ class SignUp extends React.Component {
                             </form>
                             </div>
                             <div>
+                                
                                 {/* this div is the div to add much space in right */}
                             </div>
                         </div>
+                        
                     </div>
-                    
-                    {/* <div className="container">
-                        <Header />
-                        <div className=" tops row">
-                            <div className=" icons col-sm-3">
-                                <div><i className="fab fa-facebook-f"></i></div>
-                                <div> <i className="fab fa-twitter"></i></div>
-                                <div><i className="fab fa-linkedin-in"></i></div>
-                                <div> <i className="fas fa-paper-plane"></i></div>
-                            </div>
-                            <div className=" titles col-sm-6">
-                                <h3 className="title">Code Catalyst </h3>
-                                <h3 className="title1">Rwanda</h3>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-6">
-                            </div>
-                            <div className="cont col-lg-6 col-sm-6 ">
-                                <small className="content1">Want to become a top developer in Rwanda
-                                      <p className="content2"> and work with US-based startup companies?</p>
-                                    <p className="content3"> Complete our coding application now.</p>
-                                </small>
-                            </div>
-                        </div>
-                        <form onSubmit={this.formSubmit} className="ui form" style={{ marginRight: '8rem', marginLeft: '8rem' }}>
-                            <div className="row">
-                                <div className="details">
-                                    <label> UserName:</label>
-                                    <input style={{ background: ' #F4F9FF' }}
-                                        type="text" required
-                                        name="username"
-                                        placeholder="Your username"
-                                        value={this.state.username}
-                                        onChange={this.handleChange}
-                                    />
-                                    <label> Email:</label>
-                                    <input style={{ background: ' #F4F9FF' }}
-                                        type="email" required
-                                        name="email"
-                                        placeholder="Your email address"
-                                        value={this.state.email}
-                                        onChange={this.handleChange}
-                                    />
-                                    <label> password:</label>
-                                    <input style={{ background: ' #F4F9FF' }}
-                                        type={(isPasswordShown)? "text":"password"} required
-                                        name="password"
-                                        placeholder="Your password"
-                                        value={this.state.password}
-                                        onChange={this.handleChange}
-                                    />
-                                    <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"}  onClick={this.togglePasswordVisibility}></i>
-                                </div>
-                                <div className="btn-post">
-                                    <button type="submit" className="btn btn-danger">
-                                        {this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
-                                        START MY APPLICATION
-                                    </button>
-                                    <p className="or" >or</p>
-                                    <Link to="/" className="exit">already have account?</Link>
-                                    
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div> */}
-                    <Footer />
+                    <Footer/>
             </div>
 
         )

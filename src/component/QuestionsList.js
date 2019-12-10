@@ -3,7 +3,7 @@ import axios from 'axios';
 //import './Questionlist.css';
 import './question.css';
 
-//import './App.css';
+// import './App.css';
 import Footer from './Footer';
 import { getJwt } from './utils/jwt';
 
@@ -128,53 +128,94 @@ goToProject(e){
             <div>
                 <div className="container">
                         {/* DIV WHICH HOLD HEADER */}
-                            <div >
+                            <div>
+                                <img src="code_catalyst.svg" alt="not available"/>
+                                <button onClick={this.logoutFunctin} 
+                                    style={{float:'right',fontFamily: 'Poppins'}}
+                                    className="btn">
+                                    LOGOUT
+                                </button>
+                            </div>
+                        {/* THREE DIVISIONS UNDER HEADER */}
+                        <div className="wrapper">
+                            <div className="questionIcons">
+                                <i className="fab fa-facebook-f" id="facebookIcon"></i>
+                                <i className="fab fa-twitter" id="twitterIcon"></i>
+                                <i className="fab fa-linkedin-in" id="linkedIcon"></i>
+                                <i className="fas fa-paper-plane"></i>
+                            </div>
+                            <div>
+                                <h1 style={{fontFamily: 'time new roman'}}> <b>Code Catalyst <br/><span style={{paddingLeft: '4rem'}}> Rwanda</span></b></h1>
+                                <small> Please Complete The Following Questions<br/></small>
+                                <small> You still have {qArray.length} questions, Please answer all questions</small>
+                                        <form onSubmit={this.answerSubmition} className="ui form" style={{marginBottom: '2px'}}>
+                                            <h2>{qArray[qID]}</h2> 
+                                            <input type="text" required 
+                                                name='answer' 
+                                                value={this.state.answer} 
+                                                onChange={this.handleInputChange} 
+                                            /> 
                                 
-                                    <img src="code_catalyst.svg" alt="not available"/>
-                                    <button onClick={this.logoutFunctin} 
-                                            style={{float:'right'}}
-                                            className="btn">
-                                            LOGOUT
-                                    </button>
-                            </div>
+                                            <button className="ui button" id="submitButton">
+                                                { this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
+                                                SUBMIT ANSWER
+                                            </button>
+                                        </form> 
+                                     
+                                
 
-                            <div className=" tops row">
-                        <div className=" icons col-sm-3">
-                            <div><i className="fab fa-facebook-f"></i></div>
-                            <div> <i className="fab fa-twitter"></i></div>
-                            <div><i className="fab fa-linkedin-in"></i></div>
-                            <div> <i className="fas fa-paper-plane"></i></div>
-                        </div>
-                        <div className="col-sm-6">
-                            <h3 className="title">Code Catalyst </h3>
-                            <h3 className="title">Rwanda</h3>
-                        </div>
-                        <div className=" col-sm-3 ">
-                            <div className="sign">
-                                <i className=" sticky fas fa-sticky-note"></i>
-                                <i className="ba  fas fa-bars"></i>
-                                <i className="bar  fas fa-bars"></i>
-                                <i className="pencil fas fa-pencil-alt"></i>
+                            </div>
+                            <div>
+                                <div className="sign">
+                                    <i className=" sticky fas fa-sticky-note"></i>
+                                    <i className="ba  fas fa-bars"></i>
+                                    <i className="bar  fas fa-bars"></i>
+                                    <i className="pencil fas fa-pencil-alt"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="middle row">
-                        <div className="col-sm-3">
-                        </div>
-                        <div className="col-sm-9">
-                            <small style={{marginBottom: "2rem"}}> lease complete the following questions</small>
-                        </div>
-                    </div>
+                {/* END OF THREE DIVISIONS */}
+                    {/* <div className=" tops row">
+                            <div className=" icons col-sm-3">
+                                <div><i className="fab fa-facebook-f"></i></div>
+                                <div> <i className="fab fa-twitter"></i></div>
+                                <div><i className="fab fa-linkedin-in"></i></div>
+                                <div> <i className="fas fa-paper-plane"></i></div>
+                            </div>
+                            <div className="col-sm-6">
+                                <h3 className="title">Code Catalyst </h3>
+                                <h3 className="title">Rwanda</h3>
+                            </div>
+                            <div className=" col-sm-3 ">
+                                <div className="sign">
+                                    <i className=" sticky fas fa-sticky-note"></i>
+                                    <i className="ba  fas fa-bars"></i>
+                                    <i className="bar  fas fa-bars"></i>
+                                    <i className="pencil fas fa-pencil-alt"></i>
+                                </div>
+                            </div>
+                        </div> */}
+            {/* END OF ICONS AND TITLES */}
+
+                        {/* <div className="middle row">
+                            <div className="col-sm-3">
+                                
+                            </div>
+                            <div className="col-sm-9">
+                                <small style={{marginBottom: "2rem"}}> Please Complete The Following Questions</small>
+                            </div>
+                        </div> */}
 
 
 
 {/* DISPLAY QUESTIONS AND POST ANSWERS ONE BY ONE */}
-                            <div className="table row">
-                                <small> <b>You still have {qArray.length} questions, answer all questions and click on NEXT BUTTON to see the project </b></small>
-                                <div className="col-sm-3">
-                                </div>
-                                <div className="col-sm-6">
-                                <form onSubmit={this.answerSubmition} className="ui form">
+                        {/* <div className="table row">
+                            <small className="question"> You still have {qArray.length} questions, Please answer all questions</small>
+                            <div className="col-sm-3">
+                                
+                            </div>
+                            <div className="col-sm-6">
+                                <form onSubmit={this.answerSubmition} className="ui form" style={{marginBottom: '6rem'}}>
                                     <h2>{qArray[qID]}</h2> 
                                     <input type="text" required 
                                         name='answer' 
@@ -182,16 +223,16 @@ goToProject(e){
                                         onChange={this.handleInputChange} 
                                     /> 
                         
-                                    <button className="btn">
+                                    <button className="ui button" id="submitButton">
                                         { this.state.loading && <i className="fas fa-spinner fa-spin"></i>}
                                         SUBMIT ANSWER
-                                    </button>
-                                    <button className="ui green button" style={{marginTop: '2rem'}} 
+                                    </button> */}
+                                    {/* <button className="ui green button" style={{marginTop: '2rem'}} 
                                         onClick={this.goToProject}
-                                    >NEXT</button>
-                                </form> 
-                                </div> 
-                            </div>
+                                    >NEXT</button> */}
+                                {/* </form> 
+                            </div> 
+                        </div> */}
                             
                                     
                 </div>

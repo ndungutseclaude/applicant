@@ -69,8 +69,8 @@ class Login extends React.Component{
                             <i className="fas fa-paper-plane" id="paperplaneIcon"></i>                  
                         </div>
                         <div>   
-                            <h1 style={{fontFamily: 'time new roman'}}> <b>Code Catalyst <br/><span style={{paddingLeft: '4rem'}}> Rwanda</span></b></h1>
-                            <p style={{paddingLeft: '2rem'}}>Welcome back! Fill in the info to continue</p>
+                            <h1 style={{fontFamily: 'time new roman'}}> <b>Code Catalyst <br/><span style={{paddingLeft: '2rem'}}> Rwanda</span></b></h1>
+                            <p >Welcome back! Fill in the information to continue</p>
                             <form onSubmit={this.formSubmit} className="ui form form_containing_login">
                                 <label> Email:</label>
                                 <input type="email" style={{background: '#F4F9FF', borderRadius: '0px'}} required
@@ -87,7 +87,7 @@ class Login extends React.Component{
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility} id="ijisho"></i>
+                                <i className={(isPasswordShown)? "eye fas fa-eye-slash":"eye fas fa-eye"} onClick={this.togglePasswordVisibility} id="eyeONrightLogin"></i>
                                 </div>
                                 <div className="ButtonsOnLoginForm">
 
@@ -98,13 +98,14 @@ class Login extends React.Component{
                                     </button>
                                     <p id="orStyling">or</p>
                                     <Link to="/SignUp" id="dontHaveAccount">
-                                        Don't have an accoutn?
+                                        Don't have an account? click here
                                     </Link>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+                {/* <div style={{background: 'red', marginTop: '1rem', height: '3rem', textAlign: 'center', paddingTop: '1rem'}}> hello bro</div> */}
                 <Footer/>
             </div>
         )

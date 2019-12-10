@@ -1,13 +1,23 @@
 .signUpWrapper{
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr;
+    grid-template-columns: 2fr 3fr 2fr;
     margin-top: 3rem;
+    
 }
 .signUpIcons{
     display: flex;
     flex-direction: column;
     color: #FAAE0A;
     margin-left: 1rem;
+}
+#fbStyling{
+    margin-bottom: 10px;
+}
+#twStyling{
+    margin-bottom: 10px;
+}
+#lnStyling{
+    margin-bottom: 10px;
 }
 .textStyling{
     margin-left: 5rem;
@@ -16,8 +26,12 @@
     font-size: small;
 }
 .form-container{
-    margin-right: 15rem;
-    margin-top: 3rem;
+    background: blue;
+    margin-right: 30rem;
+        
+    
+    /* margin-right: 15rem;
+    margin-top: 3rem; */
 }
 .labelStyling{
     font-weight: lighter;
@@ -55,7 +69,7 @@
 
 
 /* YVETTE */
-.icons{
+/* .icons{
     position: relative;
     color:#FAAE0A; 
 } 
@@ -229,4 +243,4 @@
    .exit{
        top:-3rem;
    }
- }
+ } */

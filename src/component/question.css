@@ -1,9 +1,35 @@
+
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 2rem;
+}
+.questionIcons{
+    display: flex;
+    flex-direction: column;
+    color: #FAAE0A;
+}
+#facebookIcon{
+    margin-bottom: 10px;
+}
+#linkedIcon{
+    margin-bottom: 10px;
+}
+#twitterIcon{
+    margin-bottom: 10px;
+}
+#paperplaneIcon{
+    margin-bottom: 10px;
+}
+
+/* YVETTE */
 .icons{
     color:#FAAE0A;
 }
 .title{
-    position: relative;
-    right:3%;
+    /* position: relative; */
+    /* right:1%; */
    font-size:40px;
     width: 870px;
     font-weight: bold;
@@ -118,6 +144,12 @@
     font-style: normal;
     font-weight: bold;
 }
+#submitButton{
+    border-radius: 0px;
+    background: red;
+    margin-top: 1rem;
+    color: white;
+}
 
 .middle{
     position: relative;
@@ -133,175 +165,3 @@
     position: relative;
     top:26px;
 }
-@media only screen and (max-width:1200px){
-    #texting{
-        position: relative;
-        right:21%;
-        
-      
-    } 
-}
-@media only screen and (max-width:990px){
-    .key_values{
-        position: relative;
-        right:6rem;
-    }  
-    #texting{
-        position: relative;
-        right:7rem;
-       
-    } 
-    .set{
-        position: relative;
-        top:16rem;
-    }
-    .footer{
-        position:fixed;
-        top:30rem;
-    }
-}
-
-@media only screen and (max-width:766px){
-    .key_values{
-        position: relative;
-        right: 8rem;
-        
-     
-    }  
-   #texting{
-    position: relative;
-    right: 8rem;
-    top:3rem;
-   }
-   .set{
-    position: relative;
-    top:12rem;
-   }
-   .save{
-       position: relative;
-       top:0rem;
-   }
-   .footer{
-       position:fixed;
-       top:34rem;
-   }
-  
-}
-
-   @media only screen and (max-width:600px) {
-     
-.sign{
-        position: relative;
-         width:120px;           
-}
-.key_values{
-    position: relative;
-    right:11rem;
-    top:3rem;
-}  
-#texting{
-position: relative;
-right:8rem;
-
-}
-.question{
-    position: relative;
-    left:30%;
-}
-.save{
-    font-size:40%; 
-}
-.line{
-    width:95%;
-}
-.logout{
-    position: relative;
-    left:10%;
-   
-}
-.title{
-    width: 440%;
-    left:4px;
-} 
-.form-name{
-    position: relative;
-    left:28%;
-}
-
-  }  
-
-   @media only screen and (max-width:575px) {
-   .logout{
-       position: relative;
-       width: 30%;
-       left:77%;
-       margin-top:-13%;
-   }   
-   .sign{
-       position: relative;
-       left:68%;
-       top:-130%;
-   }
-   small{
-       position: relative;
-       top:-800%;
-       left:9%;
-       
-   }
-   .question{
-    position: relative;
-    left:14%; 
-    top:-13rem;
-    
-   }
-   .set{
-       position: relative;
-       top:3rem;
-   }
-   .form-name{
-    position: relative;
-    width: 50%;
-    margin-top:-30%;
-    margin-left:-25%;
-   
-}
-#texting{
- position: relative;
- left:3rem;
- top:-8rem;
-}
-.key_values{
-    position: relative;  
-    left:3rem;
-    top:-12rem;
-}
-.save{
-    width: 80%;
-    right:40%;
-    font-size: 60%;
-    margin-top:-8%;
-    top:2%;
-}
-
-.btn-danger{
-    position: relative;
-   left:50%;
-   top:-70%;
-   width:80%;
-  
-}
-
-.title{
-    width:60%;
-    left:9%;
-}
-.icons{
-    left:0%;
-    top:3rem;
-}
-.footer{
-    position: fixed;
-    top:40rem;
-}
-
-  }
