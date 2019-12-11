@@ -48,7 +48,7 @@ class Login extends React.Component{
             }
         })
         .catch(err => {
-            alert('try again')
+            alert(' email or password is incorrect')
             this.setState({email:'',password:''})
             this.setState({loading: false})
             console.log(err)
@@ -62,7 +62,7 @@ class Login extends React.Component{
                 <Header/>
                 <div className="ui container">
                     <div className=" wrapper">
-                        <div className="myicons">
+                        <div className="myicons" style={{marginRight: '1rem'}}>
                             <i className="fab fa-facebook-f" id="facebookIcon"></i>
                             <i className="fab fa-twitter" id="twitterIcon"></i>
                             <i className="fab fa-linkedin-in" id="linkedIcon"></i>
@@ -105,7 +105,6 @@ class Login extends React.Component{
                         </div>
                     </div>
                 </div>
-                {/* <div style={{background: 'red', marginTop: '1rem', height: '3rem', textAlign: 'center', paddingTop: '1rem'}}> hello bro</div> */}
                 <Footer/>
             </div>
         )

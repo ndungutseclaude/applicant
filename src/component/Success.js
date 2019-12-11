@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Success extends Component {
     render() {
         return (
-            <div class="alert alert-success success" role="alert">
+            <div className="alert alert-success success" role="alert">
                 <p>URLs submitted successfully !!!</p>
-</div>
+                <Link to="/"> Go Back To Home</Link>
+            </div>
         )
     }
 }

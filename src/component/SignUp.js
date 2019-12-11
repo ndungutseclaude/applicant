@@ -59,7 +59,7 @@ class SignUp extends React.Component {
                     <Header/>
                     <div className="ui container">
                         <div className="wrapper">
-                            <div className="myicons">
+                            <div className="myicons" style={{marginRight: '1rem'}}>
                                 <i className="fab fa-facebook-f" id="facebookIcon"></i>
                                 <i className="fab fa-twitter" id="twitterIcon"></i>
                                 <i className="fab fa-linkedin-in" id="linkedIcon"></i>
@@ -76,7 +76,7 @@ class SignUp extends React.Component {
                                         <div>
                                             <div>
                                                 <label className="labelStyling"> UserName:</label>
-                                                <input id="inputStyling"
+                                                <input id="nameInputStyling"
                                                     type="text" required
                                                     name="username"
                                                     placeholder="Your username"
@@ -84,7 +84,7 @@ class SignUp extends React.Component {
                                                     onChange={this.handleChange}
                                                 />
                                                 <label className="labelStyling"> Email:</label>
-                                                <input id="inputStyling"
+                                                <input id="emailInputStyling"
                                                     type="email" required
                                                     name="email"
                                                     placeholder="Your email address"
@@ -92,7 +92,7 @@ class SignUp extends React.Component {
                                                     onChange={this.handleChange}
                                                 />
                                                 <label className="labelStyling"> Password:</label>
-                                                <input id="inputStyling"
+                                                <input id="passwordInputStyling"
                                                     type={(isPasswordShown)? "text":"password"} required
                                                     name="password"
                                                     placeholder="Your password"

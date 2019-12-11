@@ -40,7 +40,7 @@ class QuestionsList extends React.Component {
             }
             
             else if(res.data){
-                console.log(res)
+                //console.log(res)
                 this.setState({questionslist: res.data})
             }
             

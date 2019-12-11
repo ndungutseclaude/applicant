@@ -1,11 +1,25 @@
-#inputStyling{
+#nameInputStyling{
     border-radius: 0px;
-    
+    background: #F4F9FF;
+    border: 1px solid #4AD9FE;
+    box-sizing: border-box;
+    border-style: hidden;
+}
+#emailInputStyling{
+    border-radius: 0px;
+    background: #F4F9FF;
+    border: 1px solid #4AD9FE;
+    box-sizing: border-box;
+    border-style: hidden;
 
-background: #F4F9FF;
-border: 1px solid #4AD9FE;
-box-sizing: border-box;
 
+}
+#passwordInputStyling{
+    border-radius: 0px;
+    background: #F4F9FF;
+    border: 1px solid #4AD9FE;
+    box-sizing: border-box;
+    border-style: hidden;
 
 }
 .buttonsStyling{
@@ -117,7 +131,6 @@ box-sizing: border-box;
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
-    /* line-height: 63px; */
 }
 
 
