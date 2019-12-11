@@ -80,7 +80,7 @@ logoutFunctin=(e)=>{
       </div>
       {this.state.alert_message=="success"?<Success/>:null}
       <div className="urlWrapper">
-        <div className="iconsInAddUrl" style={{marginRight: '2rem'}}>
+        <div className="iconsInAddUrl" style={{marginRight: '1rem'}}>
           <i className="fab fa-facebook-f facebook" id="facebookIcon"></i>
           <i className="fab fa-twitter twitter" id="twitterIcon"></i>
           <i className="fab fa-linkedin-in linked" id="linkedIcon"></i>
@@ -90,7 +90,7 @@ logoutFunctin=(e)=>{
           <h1 style={{fontFamily: 'time new roman', paddingBottom: '2rem'}}><b>Submit your<br/> <span style={{paddingLeft: '3rem'}}>Project</span></b></h1> 
           <p>Project Details: 
               <a href="https://drive.google.com/drive/folders/1JTP0lGGTgGhFAuIl27WeMsvenmHzflT5" target='_blank'>
-                <span style={{color: 'red', paddingBottom: '2rem'}}>This is the link to the project you need to complete <i className="fas fa-arrow-up"></i></span>
+                <span style={{color: 'red', paddingBottom: '2rem'}}>This is the link to the project you need to complete <i className="fas fa-arrow-right"></i></span>
               </a>
           </p>
           <form onSubmit={this.onSubmit}>    
