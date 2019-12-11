@@ -138,7 +138,7 @@ goToProject(e){
                             </div>
                         {/* THREE DIVISIONS UNDER HEADER */}
                         <div className="wrapper">
-                            <div className="questionIcons">
+                            <div className="questionIcons" style={{marginRight: '2rem'}}>
                                 <i className="fab fa-facebook-f" id="facebookIcon"></i>
                                 <i className="fab fa-twitter" id="twitterIcon"></i>
                                 <i className="fab fa-linkedin-in" id="linkedIcon"></i>

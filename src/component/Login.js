@@ -62,7 +62,7 @@ class Login extends React.Component{
                 <Header/>
                 <div className="ui container">
                     <div className=" wrapper">
-                        <div className="myicons" style={{marginRight: '1rem'}}>
+                        <div className="myicons" style={{marginRight: '2rem'}}>
                             <i className="fab fa-facebook-f" id="facebookIcon"></i>
                             <i className="fab fa-twitter" id="twitterIcon"></i>
                             <i className="fab fa-linkedin-in" id="linkedIcon"></i>

@@ -80,7 +80,7 @@ logoutFunctin=(e)=>{
       </div>
       {this.state.alert_message=="success"?<Success/>:null}
       <div className="urlWrapper">
-        <div className="iconsInAddUrl" style={{marginRight: '1rem'}}>
+        <div className="iconsInAddUrl" style={{marginRight: '2rem'}}>
           <i className="fab fa-facebook-f facebook" id="facebookIcon"></i>
           <i className="fab fa-twitter twitter" id="twitterIcon"></i>
           <i className="fab fa-linkedin-in linked" id="linkedIcon"></i>
